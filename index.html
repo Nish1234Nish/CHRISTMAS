@@ -177,7 +177,7 @@
             What are two things you'd like for Christmas? 😏
         </div>
         
-        <video class="main-image" controls autoplay loop muted playsinline>
+        <video class="main-image" controls autoplay loop playsinline>
             <source src="christmas-video.mp4" type="video/mp4">
             Your browser does not support the video element.
         </video>
@@ -210,20 +210,21 @@
             document.body.appendChild(snowflake);
         }
         
-        // Ensure video plays on page load
+        // Ensure video plays on page load with sound
         window.addEventListener('load', function() {
             const video = document.querySelector('video');
             if (video) {
-                video.muted = true; // Ensure muted for autoplay
+                // Try to play with sound first
                 video.play().catch(function(error) {
-                    console.log('Autoplay prevented:', error);
-                    // Add a click-to-play message if autoplay fails
-                    video.addEventListener('click', function() {
-                        video.play();
+                    console.log('Autoplay with sound prevented. Trying muted...');
+                    // If it fails, mute and try again
+                    video.muted = true;
+                    video.play().catch(function(err) {
+                        console.log('Autoplay prevented entirely:', err);
                     });
                 });
             }
         });
     </script>
 </body>
-</html>IN
+</html>
