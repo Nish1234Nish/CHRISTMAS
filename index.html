@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Merry Christmas!</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #0a4d2e 0%, #165a3c 50%, #0f3d26 100%);
+            font-family: 'Georgia', serif;
+            text-align: center;
+            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
+        }
+        
+        .snowflake {
+            position: fixed;
+            top: -10px;
+            color: #90EE90;
+            font-size: 1.5em;
+            animation: fall linear infinite;
+            z-index: 1;
+        }
+        
+        @keyframes fall {
+            to { transform: translateY(100vh); }
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: rgba(10, 77, 46, 0.85);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 50px rgba(0,0,0,0.5);
+            position: relative;
+            z-index: 2;
+            border: 3px solid #32CD32;
+        }
+        
+        h1 {
+            color: #90EE90;
+            font-size: 2.5em;
+            margin: 0 0 20px 0;
+            text-shadow: 0 0 20px #32CD32, 0 0 30px #90EE90;
+            animation: glow 2s ease-in-out infinite;
+            font-family: 'Comic Sans MS', cursive;
+        }
+        
+        @keyframes glow {
+            0%, 100% { text-shadow: 0 0 20px #32CD32, 0 0 30px #90EE90; }
+            50% { text-shadow: 0 0 40px #32CD32, 0 0 60px #90EE90, 0 0 80px #00FF00; }
+        }
+        
+        .main-image {
+            width: 100%;
+            max-width: 850px;
+            height: auto;
+            border-radius: 20px;
+            margin: 20px auto;
+            box-shadow: 0 0 40px rgba(50, 205, 50, 0.8), 0 0 60px rgba(144, 238, 144, 0.6);
+            border: 5px solid #32CD32;
+            display: block;
+            animation: pulse 3s ease-in-out infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { 
+                box-shadow: 0 0 40px rgba(50, 205, 50, 0.8), 0 0 60px rgba(144, 238, 144, 0.6);
+                transform: scale(1);
+            }
+            50% { 
+                box-shadow: 0 0 60px rgba(50, 205, 50, 1), 0 0 80px rgba(144, 238, 144, 0.8);
+                transform: scale(1.02);
+            }
+        }
+        
+        .message {
+            font-size: 1.8em;
+            color: #90EE90;
+            margin: 15px 0;
+            line-height: 1.4;
+            font-weight: bold;
+            text-shadow: 0 0 10px #32CD32;
+            font-style: italic;
+        }
+        
+        .ornaments {
+            display: flex;
+            justify-content: space-around;
+            margin: 25px 0;
+            flex-wrap: wrap;
+        }
+        
+        .ornament {
+            font-size: 3.5em;
+            margin: 10px;
+            animation: swing 3s ease-in-out infinite;
+            display: inline-block;
+            filter: drop-shadow(0 0 10px #32CD32);
+        }
+        
+        .ornament:nth-child(1) { animation-delay: 0s; }
+        .ornament:nth-child(2) { animation-delay: 0.5s; }
+        .ornament:nth-child(3) { animation-delay: 1s; }
+        .ornament:nth-child(4) { animation-delay: 1.5s; }
+        .ornament:nth-child(5) { animation-delay: 2s; }
+        
+        @keyframes swing {
+            0%, 100% { transform: rotate(-15deg); }
+            50% { transform: rotate(15deg); }
+        }
+        
+        .lights {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+            gap: 20px;
+        }
+        
+        .light {
+            width: 25px;
+            height: 35px;
+            border-radius: 50%;
+            animation: blink 1.5s infinite;
+        }
+        
+        .light:nth-child(1) { background: #90EE90; animation-delay: 0s; }
+        .light:nth-child(2) { background: #32CD32; animation-delay: 0.3s; }
+        .light:nth-child(3) { background: #00FF00; animation-delay: 0.6s; }
+        .light:nth-child(4) { background: #7FFF00; animation-delay: 0.9s; }
+        .light:nth-child(5) { background: #ADFF2F; animation-delay: 1.2s; }
+        .light:nth-child(6) { background: #00FA9A; animation-delay: 1.5s; }
+        
+        @keyframes blink {
+            0%, 100% { opacity: 1; box-shadow: 0 0 25px currentColor; }
+            50% { opacity: 0.4; box-shadow: 0 0 5px currentColor; }
+        }
+        
+        .footer {
+            margin-top: 20px;
+            font-size: 1.3em;
+            color: #90EE90;
+            font-style: italic;
+            text-shadow: 0 0 15px #32CD32;
+        }
+        
+        .stars {
+            margin: 15px 0;
+            font-size: 2.5em;
+            animation: twinkle 2s infinite;
+        }
+        
+        @keyframes twinkle {
+            0%, 100% { opacity: 1; filter: drop-shadow(0 0 10px #32CD32); }
+            50% { opacity: 0.5; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="lights">
+            <div class="light"></div>
+            <div class="light"></div>
+            <div class="light"></div>
+            <div class="light"></div>
+            <div class="light"></div>
+            <div class="light"></div>
+        </div>
+        
+        <h1>🎄 Merry Christmas! 🎄</h1>
+        
+        <div class="message">
+            What are two things you'd like for Christmas? 😏
+        </div>
+        
+        <video class="main-image" controls autoplay loop muted playsinline>
+            <source src="christmas-video.mp4" type="video/mp4">
+            Your browser does not support the video element.
+        </video>
+        
+        <div class="ornaments">
+            <span class="ornament">🎄</span>
+            <span class="ornament">🎁</span>
+            <span class="ornament">💋</span>
+            <span class="ornament">🍾</span>
+            <span class="ornament">❤️</span>
+        </div>
+        
+        <div class="footer">
+            Have yourself a naughty little Christmas! 🎅💚
+        </div>
+        
+        <div class="stars">✨ 💚 ✨ 💚 ✨</div>
+    </div>
+    
+    <script>
+        // Create snowflakes
+        for(let i = 0; i < 40; i++) {
+            let snowflake = document.createElement('div');
+            snowflake.className = 'snowflake';
+            snowflake.innerHTML = '❄';
+            snowflake.style.left = Math.random() * 100 + '%';
+            snowflake.style.animationDuration = (Math.random() * 3 + 2) + 's';
+            snowflake.style.animationDelay = Math.random() * 5 + 's';
+            snowflake.style.fontSize = (Math.random() * 1 + 0.5) + 'em';
+            document.body.appendChild(snowflake);
+        }
+        
+        // Ensure video plays on page load
+        window.addEventListener('load', function() {
+            const video = document.querySelector('video');
+            if (video) {
+                video.muted = true; // Ensure muted for autoplay
+                video.play().catch(function(error) {
+                    console.log('Autoplay prevented:', error);
+                    // Add a click-to-play message if autoplay fails
+                    video.addEventListener('click', function() {
+                        video.play();
+                    });
+                });
+            }
+        });
+    </script>
+</body>
+</html>IN
